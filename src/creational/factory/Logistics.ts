@@ -17,9 +17,9 @@ export class Logistics {
   }
 
   getTransport(coordinates: [number, number]): Transport {
-    if (this.canGetByGround(...coordinates)) {
+    if (this.canGetByGround(coordinates[0], coordinates[1])) {
       return new Truck()
-    } else if (this.canGetBySea(...coordinates)) {
+    } else if (this.canGetBySea(coordinates[0], coordinates[1])) {
       return new Ship()
     }
     return new Airplane()
